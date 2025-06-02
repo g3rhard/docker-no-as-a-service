@@ -1,4 +1,4 @@
-name: GHCR Cleanup - Delete Untagged Images
+name: Delete untagged images
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Delete untagged images
-        uses: peter-evans/delete-package-versions@v5
+        uses: actions/delete-package-versions@v5
         with:
           package-name: no-as-a-service
           package-type: container

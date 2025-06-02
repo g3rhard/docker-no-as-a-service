@@ -1,0 +1,22 @@
+name: GHCR Cleanup - Delete Untagged Images
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Delete untagged images
+        uses: peter-evans/delete-package-versions@v5
+        with:
+          package-name: no-as-a-service
+          package-type: container
+          min-versions-to-keep: 10      # change as you want
+          delete-only-untagged-versions: true

@@ -6,6 +6,8 @@ WORKDIR /app
 # Install git
 RUN apk add --no-cache git
 
+USER node
+
 # Clone the repository
 RUN git clone https://github.com/hotheadhacker/no-as-a-service.git .
 

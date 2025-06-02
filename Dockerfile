@@ -10,7 +10,7 @@ RUN apk add --no-cache git
 RUN git clone https://github.com/hotheadhacker/no-as-a-service.git .
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # ---- Runner Stage ----
 FROM node:20-alpine

@@ -1,5 +1,5 @@
 # ---- Builder Stage ----
-FROM node:24-alpine@sha256:7aaba6b13a55a1d78411a1162c1994428ed039c6bbef7b1d9859c25ada1d7cc5 AS builder
+FROM node:24-alpine@sha256:49e45bf002728e35c3a466737d8bcfe12c29731c7c2f3e223f9a7c794fff19a4 AS builder
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN apk add --no-cache git
 RUN git clone https://github.com/hotheadhacker/no-as-a-service.git .
 
 # ---- Runner Stage ----
-FROM node:24-alpine@sha256:7aaba6b13a55a1d78411a1162c1994428ed039c6bbef7b1d9859c25ada1d7cc5
+FROM node:24-alpine@sha256:49e45bf002728e35c3a466737d8bcfe12c29731c7c2f3e223f9a7c794fff19a4
 
 WORKDIR /app
 COPY --from=builder /app /app

@@ -6,5 +6,14 @@
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests"
   ],
+  "packageRules": [
+    {
+      "groupName": "CI/CD dependencies",
+      "matchCategories": [
+        "ci",
+        "cd"
+      ]
+    }
+  ],
   "assignees": ["g3rhard"]
 }

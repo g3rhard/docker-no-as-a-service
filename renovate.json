@@ -6,6 +6,18 @@
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update upstream no-as-a-service main commit in Dockerfile",
+      "fileMatch": [
+        "(^|/)Dockerfile$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) versioning=(?<versioning>\\S+)\\s+ARG NO_AS_A_SERVICE_REF=(?<currentValue>[a-f0-9]{40})"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "groupName": "CI/CD dependencies",

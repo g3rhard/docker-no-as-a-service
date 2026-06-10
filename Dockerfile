@@ -10,7 +10,7 @@ ARG NO_AS_A_SERVICE_REF=764062a307c725cb55f56308ee842f5e42529dd1
 RUN git clone https://github.com/hotheadhacker/no-as-a-service.git . && git checkout "$NO_AS_A_SERVICE_REF"
 
 # ---- Runner Stage ----
-FROM public.ecr.aws/docker/library/node:24-alpine@sha256:cd6fb7efa6490f039f3471a189214d5f548c11df1ff9e5b181aa49e22c14383e
+FROM public.ecr.aws/docker/library/node:24-alpine@sha256:fb71d01345f11b708a3553c66e7c74074f2d506400ea81973343d915cb64eef0
 
 WORKDIR /app
 COPY --from=builder /app /app

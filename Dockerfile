@@ -1,5 +1,5 @@
 # ---- Builder Stage ----
-FROM public.ecr.aws/docker/library/alpine:3.22 AS builder
+FROM public.ecr.aws/docker/library/alpine:3.24@sha256:8ddefa941e689fc29abcdeb8dae3b3c6d139cc08ce9a52633931160701770685 AS builder
 
 WORKDIR /app
 
